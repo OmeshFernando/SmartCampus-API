@@ -1,5 +1,7 @@
 package com.mycompany.smartcampus.resources;
 
+import com.mycompany.smartcampus.exceptions.SensorUnavailableException;
+import com.mycompany.smartcampus.models.Sensor;
 import com.mycompany.smartcampus.models.SensorReading;
 import com.mycompany.smartcampus.repository.MockDataRepository;
 import javax.ws.rs.*;
@@ -34,10 +36,15 @@ public class SensorReadingResource {
         // For now, we set metadata if missing
         reading.setId(UUID.randomUUID().toString());
         reading.setTimestamp(System.currentTimeMillis());
+        Sensor sensor = MockDataRepository.getSensorById(sensorId);
 
         // Save reading and trigger Side Effect: update parent sensor's currentValue
         MockDataRepository.addReading(sensorId, reading); 
 
-        return Response.status(Response.Status.CREATED).entity(reading).build();
+        if (sensor != null && "MAINTENANCE".equals(sensor.getStatus())) {
+        throw new SensorUnavailableException("Sensor " + sensorId + " is currently under maintenance.");
     }
+        return null;
+    
+}
 }

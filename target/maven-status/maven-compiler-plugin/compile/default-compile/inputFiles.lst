@@ -5,6 +5,7 @@ E:\IIT\2nd Year\Client-Server Architectures\CW SmartCampus\SmartCampus\src\main\
 E:\IIT\2nd Year\Client-Server Architectures\CW SmartCampus\SmartCampus\src\main\java\com\mycompany\smartcampus\resources\SensorResource.java
 E:\IIT\2nd Year\Client-Server Architectures\CW SmartCampus\SmartCampus\src\main\java\com\mycompany\smartcampus\RestApplication.java
 E:\IIT\2nd Year\Client-Server Architectures\CW SmartCampus\SmartCampus\src\main\java\com\mycompany\smartcampus\resources\JavaEE8Resource.java
+E:\IIT\2nd Year\Client-Server Architectures\CW SmartCampus\SmartCampus\src\main\java\com\mycompany\smartcampus\exceptions\SensorUnavailableException.java
 E:\IIT\2nd Year\Client-Server Architectures\CW SmartCampus\SmartCampus\src\main\java\com\mycompany\smartcampus\models\Sensor.java
 E:\IIT\2nd Year\Client-Server Architectures\CW SmartCampus\SmartCampus\src\main\java\com\mycompany\smartcampus\repository\MockDataRepository.java
 E:\IIT\2nd Year\Client-Server Architectures\CW SmartCampus\SmartCampus\src\main\java\com\mycompany\smartcampus\exceptions\LinkedResourceNotFoundException.java
@@ -13,4 +14,5 @@ E:\IIT\2nd Year\Client-Server Architectures\CW SmartCampus\SmartCampus\src\main\
 E:\IIT\2nd Year\Client-Server Architectures\CW SmartCampus\SmartCampus\src\main\java\com\mycompany\smartcampus\models\SensorReading.java
 E:\IIT\2nd Year\Client-Server Architectures\CW SmartCampus\SmartCampus\src\main\java\com\mycompany\smartcampus\exceptions\LinkedResourceMapper.java
 E:\IIT\2nd Year\Client-Server Architectures\CW SmartCampus\SmartCampus\src\main\java\com\mycompany\smartcampus\resources\SensorReadingResource.java
+E:\IIT\2nd Year\Client-Server Architectures\CW SmartCampus\SmartCampus\src\main\java\com\mycompany\smartcampus\exceptions\SensorUnavailableExceptionMapper.java
 E:\IIT\2nd Year\Client-Server Architectures\CW SmartCampus\SmartCampus\src\main\java\com\mycompany\smartcampus\exceptions\GlobalSafetyNet.java
