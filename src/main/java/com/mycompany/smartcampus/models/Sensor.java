@@ -1,5 +1,7 @@
 package com.mycompany.smartcampus.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * Represents a hardware sensor deployed on campus.
  * Specified in Part 1 Core Resource Data Models.
@@ -11,6 +13,7 @@ public class Sensor {
     private double currentValue; // The most recent measurement recorded 
     private String roomId;       // Foreign key linking to the Room 
 
+    @JsonIgnoreProperties(ignoreUnknown = true) // Prevents loops and unexpected field crashes
     // Default constructor for JSON deserialization
     public Sensor() {}
 

@@ -23,6 +23,25 @@ public class SensorResource {
                 .filter(s -> s.getType().equalsIgnoreCase(type))
                 .collect(Collectors.toList());
     }
+    
+    /**
+     * GET method for a single sensor ID
+     * This handles: GET /api/v1/sensors/SNS-001
+     */
+    @GET
+    @Path("/{sensorId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getSensor(@PathParam("sensorId") String sensorId) {
+        Sensor sensor = MockDataRepository.getSensorById(sensorId);
+        
+        if (sensor == null) {
+            // Return 404 if the sensor doesn't exist
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        
+        // Return 200 OK with the sensor data
+        return Response.ok(sensor).build();
+    }
 
     // 2. POST /api/v1/sensors - Registration with ID-only response
     @POST
