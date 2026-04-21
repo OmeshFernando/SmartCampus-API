@@ -4,9 +4,9 @@ package com.mycompany.smartcampus.models;
  * Specified in Part 1 Core Resource Data Models.
  */
 public class SensorReading {
-    private String id;        // Unique reading event ID (UUID recommended) [cite: 83, 93]
-    private long timestamp;   // Epoch time (ms) when captured [cite: 89, 94]
-    private double value;     // The actual metric value recorded [cite: 91, 95]
+    private String id;        // Unique reading event ID (UUID recommended) 
+    private long timestamp;   // Epoch time (ms) when captured 
+    private double value;     // The actual metric value recorded 
 
     // Default constructor for JSON deserialization
     public SensorReading() {}
@@ -17,7 +17,7 @@ public class SensorReading {
         this.value = value;
     }
 
-    // Getters and Setters [cite: 42]
+    // Getters and Setters 
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
 

@@ -8,10 +8,10 @@ import java.util.List;
  * Specified in Part 1 Core Resource Data Models.
  */
 public class Room {
-    private String id;       // Unique identifier, e.g., "LIB-301" [cite: 53, 56]
-    private String name;     // Human-readable name, e.g., "Library Quiet Study" [cite: 53, 56]
-    private int capacity;    // Maximum occupancy for safety [cite: 54, 57]
-    private List<String> sensorIds = new ArrayList<>(); // IDs of sensors in this room [cite: 58, 59]
+    private String id;       // Unique identifier, e.g., "LIB-301" 
+    private String name;     // Human-readable name, e.g., "Library Quiet Study" 
+    private int capacity;    // Maximum occupancy for safety 
+    private List<String> sensorIds = new ArrayList<>(); // IDs of sensors in this room 
 
     // Default constructor for JSON deserialization
     public Room() {}
@@ -22,7 +22,7 @@ public class Room {
         this.capacity = capacity;
     }
 
-    // Getters and Setters [cite: 42]
+    // Getters and Setters 
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
 
