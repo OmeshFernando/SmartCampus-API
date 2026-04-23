@@ -13,7 +13,7 @@ public class SensorUnavailableExceptionMapper implements ExceptionMapper<SensorU
     @Override
     public Response toResponse(SensorUnavailableException exception) {
         Map<String, Object> errorDetails = new HashMap<>();
-        errorDetails.put("status", Response.Status.SERVICE_UNAVAILABLE.getStatusCode());
+        errorDetails.put("status", 403);
         errorDetails.put("error", "Sensor Unavailable");
         errorDetails.put("message", exception.getMessage());
         errorDetails.put("action", "Please check the sensor's physical status or contact maintenance.");

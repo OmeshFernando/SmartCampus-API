@@ -1,5 +1,6 @@
 package com.mycompany.smartcampus.resources;
 
+import com.mycompany.smartcampus.exceptions.LinkedResourceNotFoundException;
 import com.mycompany.smartcampus.exceptions.SensorUnavailableException;
 import com.mycompany.smartcampus.models.Sensor;
 import com.mycompany.smartcampus.models.SensorReading;
@@ -29,16 +30,22 @@ public class SensorReadingResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response addReading(SensorReading reading, @Context UriInfo uriInfo) {
-        // 1. Setup metadata
+        // Setup metadata
         reading.setId(UUID.randomUUID().toString());
         reading.setTimestamp(System.currentTimeMillis());
         
         Sensor sensor = MockDataRepository.getSensorById(sensorId);
+        
+        // 1. Check if sensor exists first
+        if (sensor == null) {
+        throw new LinkedResourceNotFoundException("Sensor " + sensorId + " not found.");
+    }
 
-        // 2. Defensive Check: Prevent readings if sensor is unavailable (Part 5 requirement)
-        if (sensor != null && "MAINTENANCE".equals(sensor.getStatus())) {
-            throw new SensorUnavailableException("Sensor " + sensorId + " is currently under maintenance.");
-        }
+        // 2. The Logic Gate: If status is anything other than ACTIVE, throw the error
+        // Use .trim() and .equalsIgnoreCase to avoid hidden spaces or case issues
+        if (!"ACTIVE".equalsIgnoreCase(sensor.getStatus().trim())) {
+        throw new SensorUnavailableException("Sensor " + sensorId + " is currently " + sensor.getStatus());
+    }
 
         // 3. Save reading (This also triggers the side-effect update to the parent sensor)
         MockDataRepository.addReading(sensorId, reading);
