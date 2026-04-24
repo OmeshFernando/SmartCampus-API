@@ -7,7 +7,7 @@ import javax.ws.rs.ext.Provider;
 import java.util.HashMap;
 import java.util.Map;
 
-@Provider // Important: Register this as a JAX-RS provider
+@Provider // Register this as a JAX-RS provider
 public class LinkedResourceMapper implements ExceptionMapper<LinkedResourceNotFoundException> {
 
     @Override

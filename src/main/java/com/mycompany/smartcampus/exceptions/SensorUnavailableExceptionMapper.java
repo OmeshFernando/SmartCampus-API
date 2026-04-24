@@ -18,7 +18,7 @@ public class SensorUnavailableExceptionMapper implements ExceptionMapper<SensorU
         errorDetails.put("message", exception.getMessage());
         errorDetails.put("action", "Please check the sensor's physical status or contact maintenance.");
 
-        return Response.status(Response.Status.SERVICE_UNAVAILABLE)
+        return Response.status(403)
                 .entity(errorDetails)
                 .type(MediaType.APPLICATION_JSON)
                 .build();

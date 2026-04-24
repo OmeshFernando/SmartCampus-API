@@ -22,7 +22,7 @@ public class DiscoveryResource {
         discovery.put("version", "1.0.0");
         discovery.put("description", "Smart Campus Sensor Management API");
         
-        // HATEOAS Links [cite: 109]
+        // HATEOAS Links 
         Map<String, String> links = new HashMap<>();
         links.put("rooms", "/api/v1/rooms");
         links.put("sensors", "/api/v1/sensors");

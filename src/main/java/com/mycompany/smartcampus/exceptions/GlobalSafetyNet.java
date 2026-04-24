@@ -21,7 +21,7 @@ public class GlobalSafetyNet implements ExceptionMapper<Throwable> {
         errorBody.put("error", "Internal Server Error");
         errorBody.put("message", "A technical error occurred. Internal details are hidden for security.");
 
-        // We return a clean 500 status without exposing code paths
+        // return a clean 500 status without exposing code paths
         return Response.status(500)
                 .entity(errorBody)
                 .type(MediaType.APPLICATION_JSON)
